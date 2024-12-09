@@ -1002,6 +1002,61 @@ def create_detailed_analysis():
         </div>
     """, unsafe_allow_html=True)
 
+def display_weather_alert():
+    """Display the weather alert section."""
+    st.markdown("### 🌤️ Weather Alert")
+    st.warning("Light rain expected this afternoon. Remember to maintain safe following distance!")
+
+def real_time_simulation():
+    """Simulate real-time alerts for different scenarios."""
+    st.markdown("### 🎯 Real-time Alert Simulation")
+    st.markdown("Select different scenarios to hear how the alert system works:")
+    
+    col1, col2 = st.columns(2)
+    with col1:
+        if st.button("🚨 Simulate Speeding"):
+            play_alert("speeding")
+        if st.button(" Simulate Phone Use"):
+            play_alert("phone_use")
+        if st.button("↔️ Simulate Lane Departure"):
+            play_alert("lane_departure")
+    with col2:
+        if st.button("↩ Simulate Sharp Turn"):
+            play_alert("sharp_turn")
+        if st.button("🛑 Simulate Sudden Brake"):
+            play_alert("sudden_brake")
+        if st.button("😴 Simulate Fatigue"):
+            play_alert("fatigue")
+
+def voice_command_button():
+    """Display the voice command button."""
+    st.markdown(
+        """
+        <style>
+        .speech-button {
+            background-color: #1E3D59;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            border-radius: 12px;
+            width: 100%;
+        }
+        </style>
+        """,
+        unsafe_allow_html=True
+    )
+    st.button("🎤 Hold to Speak", key="speech_button", help="Speech functionality coming soon!")
+
+# Main function to run the features
+def main():
+    display_weather_alert()
+    real_time_simulation()
+    voice_command_button()
+
 if __name__ == "__main__":
     main() 
     
