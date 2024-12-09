@@ -9,7 +9,6 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# Regular imports without speech recognition
 import sys
 import subprocess
 from datetime import datetime
